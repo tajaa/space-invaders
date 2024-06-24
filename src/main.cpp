@@ -1,27 +1,25 @@
 #include <raylib.h>
-#include "ball.h"
+#include "spaceship.hpp"
 
 int main()
 {
-    Color darkGreen = Color{20, 160, 133, 255};
+  Color grey = {29, 29, 27, 255};
+  int windowWidth = 750;
+  int windowHeight = 700;
 
-    const int screenWidth = 800;
-    const int screenHeight = 600;
+  InitWindow(windowWidth, windowHeight, "C++ space invaders");
+  SetTargetFPS(60);
 
-    Ball ball = Ball();
+  Spaceship spaceship;
 
-    InitWindow(screenWidth, screenHeight, "My first RAYLIB program!");
-    SetTargetFPS(60);
 
-    while (!WindowShouldClose())
-    {
-        BeginDrawing();
-        ClearBackground(darkGreen);
-        ball.Update();
-        ball.Draw();
-        EndDrawing();
+  while(WindowShouldClose()==false){
+      BeginDrawing();
+
+      ClearBackground(grey);
+      spaceship.Draw();
+      EndDrawing();
+  }
+
+  CloseWindow();
     }
-
-    CloseWindow();
-    return 0;
-}
