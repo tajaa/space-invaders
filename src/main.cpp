@@ -1,5 +1,5 @@
 #include <raylib.h>
-#include "spaceship.hpp"
+#include "game.hpp"
 
 int main()
 {
@@ -10,14 +10,16 @@ int main()
   InitWindow(windowWidth, windowHeight, "C++ space invaders");
   SetTargetFPS(60);
 
-  Spaceship spaceship;
+  Game game;
 
-
+ 
   while(WindowShouldClose()==false){
       BeginDrawing();
 
       ClearBackground(grey);
-      spaceship.Draw();
+
+      game.Draw();
+  
       EndDrawing();
   }
 
