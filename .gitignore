@@ -1,0 +1,58 @@
+
+# Compiled object files
+*.o
+*.obj
+*.lo
+*.slo
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.lai
+*.so
+*.so.*
+*.dll
+*.dylib
+*.exe
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Conan files
+conanbuildinfo.*
+conaninfo.txt
+graph_info.json
+
+# CMake files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+*.cmake
+*.dir
+
+# Premake files
+*.make
+*.workspace
+*.project
+
+# Generated files
+*.out
+*.output
+
+# Mac OS files
+.DS_Store
+
+# Vim swap files
+*.swp
+*.swo
