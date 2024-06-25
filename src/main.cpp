@@ -1,9 +1,8 @@
-#include <raylib.h>
 #include "game.hpp"
 #include "laser.hpp"
+#include <raylib.h>
 
-int main()
-{
+int main() {
   Color grey = {29, 29, 27, 255};
   int windowWidth = 750;
   int windowHeight = 700;
@@ -13,21 +12,22 @@ int main()
 
   Game game;
 
-  Laser laser = Laser({100, 100}, 7);
+  Laser laser = Laser({100, 100}, -7);
 
+  while (WindowShouldClose() == false) {
+    game.HandleInput();
 
- 
-  while(WindowShouldClose()==false){
-      game.HandleInput();
-      BeginDrawing();
+    laser.Update();
 
-      ClearBackground(grey);
+    BeginDrawing();
 
-      game.Draw();
-      laser.Draw();
-  
-      EndDrawing();
+    ClearBackground(grey);
+
+    game.Draw();
+    laser.Draw();
+
+    EndDrawing();
   }
 
   CloseWindow();
-    }
+}
