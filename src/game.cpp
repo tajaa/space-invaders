@@ -1,4 +1,5 @@
 #include "game.hpp"
+#include <iostream>
 
 Game::Game() {}
 
@@ -8,6 +9,8 @@ void Game::Update() {
   for (auto &laser : spaceship.lasers) {
     laser.Update();
   }
+  DeleteInactiveLasers();
+  std::cout << "vector size" << spaceship.lasers.size() << std::endl;
 }
 
 void Game::Draw() {
@@ -26,3 +29,13 @@ void Game::HandleInput() {
     spaceship.FireLaser();
   }
 };
+
+void Game::DeleteInactiveLasers() {
+  for (auto it = spaceship.lasers.begin(); it != spaceship.lasers.end();) {
+    if (!it->active) {
+      it = spaceship.lasers.erase(it);
+    } else {
+      ++it;
+    }
+  }
+}
