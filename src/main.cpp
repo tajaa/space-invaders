@@ -1,4 +1,5 @@
 #include "game.hpp"
+#include "obstacle.hpp"
 #include <raylib.h>
 
 int main() {
@@ -10,8 +11,10 @@ int main() {
   SetTargetFPS(60);
 
   Game game;
+  Obstacle obstacle = Obstacle({100, 100});
 
   while (WindowShouldClose() == false) {
+
     game.HandleInput();
     game.Update();
     BeginDrawing();
@@ -19,6 +22,7 @@ int main() {
     ClearBackground(grey);
 
     game.Draw();
+    obstacle.Draw();
 
     EndDrawing();
   }
